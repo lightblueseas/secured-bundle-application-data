@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>de.alpharogroup</groupId>
+		<artifactId>persistence-api</artifactId>
+		<version>3.28.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>secured-bundle-application-data</artifactId>
+	<version>3.11.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	
+	<modules>
+		<module>secured-bundle-application-init</module>
+	</modules>
+	
+	
+	<properties>
+		<!-- USER-DATA versions -->
+		<user-data.version>${project.version}</user-data.version>
+		<user-entities.version>${user-data.version}</user-entities.version>
+		<user-business.version>${user-data.version}</user-business.version>
+		<user-domain.version>${user-data.version}</user-domain.version>
+		<user-rest-api.version>${user-data.version}</user-rest-api.version>
+		<!-- USER-MANAGEMENT-DATA versions -->
+		<user-management-data.version>${project.version}</user-management-data.version>
+		<user-management-entities.version>${user-management-data.version}</user-management-entities.version>
+		<user-management-business.version>${user-management-data.version}</user-management-business.version>
+		<user-management-domain.version>${user-management-data.version}</user-management-domain.version>
+		<user-management-rest-api.version>${user-management-data.version}</user-management-rest-api.version>
+		<!-- ADDRESS-BOOK-DATA versions -->
+		<address-book-data.version>${project.version}</address-book-data.version>
+		<address-book-rest-api.version>${address-book-data.version}</address-book-rest-api.version>
+		<!-- RESOURCE-SYSTEM-DATA versions -->
+		<resource-system-data.version>${project.version}</resource-system-data.version>
+		<resource-system-entities.version>${resource-system-data.version}</resource-system-entities.version>
+		<resource-system-domain.version>${resource-system-data.version}</resource-system-domain.version>
+		<resource-system-business.version>${resource-system-data.version}</resource-system-business.version>
+		<resource-system-rest-api.version>${resource-system-data.version}</resource-system-rest-api.version>
+		<!-- RESOURCE-BUNDLES-DATA versions -->
+		<resource-bundles-data.version>${project.version}</resource-bundles-data.version>
+		<resource-bundles-business.version>${resource-bundles-data.version}</resource-bundles-business.version>
+		<resource-bundles-rest-api.version>${resource-bundles-data.version}</resource-bundles-rest-api.version>
+	</properties>
+	
+	
+</project>
