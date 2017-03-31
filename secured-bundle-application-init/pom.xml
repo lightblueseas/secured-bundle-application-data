@@ -142,7 +142,7 @@
 								<drop>true</drop>
 								<!-- optional, but useful for later inspection -->
 								<outputfilename>schema.ddl</outputfilename>
-								<persistenceunit>bundlemanager</persistenceunit>
+								<persistenceunit>bundlemanagement</persistenceunit>
 							</componentProperties>
 						</configuration>
 					</plugin>

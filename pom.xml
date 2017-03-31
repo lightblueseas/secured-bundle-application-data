@@ -57,6 +57,8 @@
 
 	<modules>
 		<module>secured-bundle-application-init</module>
+		<module>secured-bundle-application-rest-client</module>
+		<module>secured-bundle-application-rest-web</module>
 	</modules>
 
 
@@ -85,6 +87,7 @@
 		<address-book-data.version>${project.version}</address-book-data.version>
 		<address-book-entities.version>${address-book-data.version}</address-book-entities.version>
 		<address-book-business.version>${address-book-data.version}</address-book-business.version>
+		<address-book-domain.version>${address-book-data.version}</address-book-domain.version>
 		<address-book-rest-api.version>${address-book-data.version}</address-book-rest-api.version>
 		<!-- RESOURCE-SYSTEM-DATA versions -->
 		<resource-system-data.version>${project.version}</resource-system-data.version>
@@ -105,10 +108,10 @@
 			<!-- PROJECT-DATA DEPENDENCIES -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
-				<artifactId>user-management-entities</artifactId>
+				<artifactId>secured-bundle-application-rest-client</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-			
+
 			<!-- RESOURCE-BUNDLES-DATA DEPENDENCIES -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
@@ -133,8 +136,14 @@
 				<artifactId>resource-bundles-rest-api</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-			
+
 			<!-- USER-MANAGEMENT-DATA DEPENDENCIES -->
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>user-management-entities</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>user-management-domain</artifactId>

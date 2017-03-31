@@ -1,0 +1,58 @@
+Manifest-Version: 1.0
+Class-Path: user-management-rest-api-3.11.0-SNAPSHOT.jar rest-api-3.28
+ .0-SNAPSHOT.jar domain-api-3.28.0-SNAPSHOT.jar data-api-3.28.0-SNAPSH
+ OT.jar hibernate-core-4.3.11.Final.jar jboss-logging-3.1.3.GA.jar jbo
+ ss-logging-annotations-1.2.0.Beta1.jar jboss-transaction-api_1.2_spec
+ -1.0.0.Final.jar dom4j-1.6.1.jar xml-apis-1.4.01.jar hibernate-common
+ s-annotations-4.0.5.Final.jar hibernate-jpa-2.1-api-1.0.0.Final.jar j
+ avassist-3.18.1-GA.jar antlr-2.7.7.jar jandex-1.1.0.Final.jar spring-
+ core-4.3.6.RELEASE.jar commons-logging-1.2.jar spring-orm-4.3.6.RELEA
+ SE.jar spring-beans-4.3.6.RELEASE.jar spring-jdbc-4.3.6.RELEASE.jar s
+ pring-tx-4.3.6.RELEASE.jar jcommons-lang-4.19.0-SNAPSHOT.jar commons-
+ beanutils-1.9.3.jar commons-collections-3.2.2.jar commons-collections
+ 4-4.1.jar commons-io-2.5.jar velocity-1.7.jar commons-lang-2.4.jar co
+ mmons-codec-1.10.jar joda-time-2.9.7.jar silly-collections-4.15.0-SNA
+ PSHOT.jar lombok-1.16.12.jar slf4j-log4j12-1.6.4.jar slf4j-api-1.6.4.
+ jar log4j-1.2.16.jar xml-extensions-4.16.0-SNAPSHOT.jar xercesImpl-2.
+ 11.0.jar xmlbeans-2.6.0.jar stax-api-1.0.1.jar jettison-1.3.8.jar xst
+ ream-1.4.8.jar xmlpull-1.1.3.1.jar xpp3_min-1.1.4c.jar jackson-databi
+ nd-2.8.6.jar jackson-annotations-2.8.0.jar jackson-core-2.8.6.jar fil
+ e-worker-4.15.0-SNAPSHOT.jar poi-3.15.jar poi-ooxml-3.15.jar poi-ooxm
+ l-schemas-3.15.jar curvesapi-1.04.jar zip4j-1.3.2.jar dozer-5.5.1.jar
+  commons-lang3-3.5.jar jcl-over-slf4j-1.7.5.jar javax.ws.rs-api-2.0.1
+ .jar jackson-jaxrs-json-provider-2.8.6.jar jackson-jaxrs-base-2.8.6.j
+ ar jackson-module-jaxb-annotations-2.8.6.jar jackson-datatype-jaxrs-2
+ .8.6.jar javaee-api-7.0.jar javax.mail-1.5.0.jar activation-1.1.jar u
+ ser-management-domain-3.11.0-SNAPSHOT.jar user-management-business-3.
+ 11.0-SNAPSHOT.jar business-api-3.28.0-SNAPSHOT.jar user-management-en
+ tities-3.11.0-SNAPSHOT.jar spring-context-4.3.6.RELEASE.jar spring-ao
+ p-4.3.6.RELEASE.jar spring-expression-4.3.6.RELEASE.jar user-entities
+ -3.11.0-SNAPSHOT.jar data-usertype-3.28.0-SNAPSHOT.jar postgresql-9.4
+ .1211.jar auth-security-4.19.0.jar randomizer-4.19.0.jar vintage-time
+ -4.10.0.jar crypt-data-4.19.0.jar bcpkix-jdk15on-1.55.jar bcprov-jdk1
+ 5on-1.55.jar resourcebundle-inspector-2.12.0-SNAPSHOT.jar nv-i18n-1.2
+ 1.jar test-objects-4.14.0.jar address-book-entities-3.11.0-SNAPSHOT.j
+ ar resource-system-entities-3.11.0-SNAPSHOT.jar address-book-business
+ -3.11.0-SNAPSHOT.jar jgeohash-core-2.3.0.jar geoip-api-1.2.14.jar org
+ .torpedoquery-1.7.0.jar javax.persistence-2.0.0.jar objenesis-1.3.jar
+  guava-11.0.2.jar jsr305-1.3.9.jar user-business-3.11.0-SNAPSHOT.jar 
+ crypt-core-4.19.0.jar bcprov-ext-jdk15on-1.55.jar resource-system-bus
+ iness-3.11.0-SNAPSHOT.jar user-domain-3.11.0-SNAPSHOT.jar address-boo
+ k-domain-3.11.0-SNAPSHOT.jar resource-system-domain-3.11.0-SNAPSHOT.j
+ ar user-management-rest-client-3.11.0-SNAPSHOT.jar rest-client-3.28.0
+ -SNAPSHOT.jar cxf-rt-rs-client-3.1.10.jar cxf-rt-transports-http-3.1.
+ 10.jar cxf-core-3.1.10.jar woodstox-core-asl-4.4.1.jar stax2-api-3.1.
+ 4.jar xmlschema-core-2.2.1.jar cxf-rt-frontend-jaxrs-3.1.10.jar javax
+ .annotation-api-1.2.jar user-rest-api-3.11.0-SNAPSHOT.jar address-boo
+ k-rest-api-3.11.0-SNAPSHOT.jar resource-system-rest-api-3.11.0-SNAPSH
+ OT.jar javax.servlet-api-3.1.0.jar email-tails-4.14.0.jar mail-1.4.5.
+ jar mime-util-2.1.3.jar net-extensions-4.11.0.jar secured-bundle-appl
+ ication-rest-client.jar resource-bundles-rest-api-3.11.0-SNAPSHOT.jar
+  resource-bundles-domain-3.11.0-SNAPSHOT.jar resource-bundles-busines
+ s-3.11.0-SNAPSHOT.jar resource-bundles-entities-3.11.0-SNAPSHOT.jar s
+ pring-web-4.3.6.RELEASE.jar hibernate-entitymanager-4.3.11.Final.jar 
+ hibernate-ehcache-4.3.11.Final.jar ehcache-core-2.4.3.jar hibernate-v
+ alidator-5.1.3.Final.jar validation-api-1.1.0.Final.jar classmate-1.0
+ .0.jar cglib-2.2.2.jar asm-3.3.1.jar h2-1.4.190.jar jetty-jmx-9.4.2.v
+ 20170220.jar
+
