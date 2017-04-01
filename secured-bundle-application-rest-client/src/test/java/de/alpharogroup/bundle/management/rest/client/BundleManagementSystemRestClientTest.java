@@ -24,15 +24,6 @@
  */
 package de.alpharogroup.bundle.management.rest.client;
 
-import static org.junit.Assert.fail;
-
-import org.junit.Test;
-
 public class BundleManagementSystemRestClientTest {
-
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
 
 }
