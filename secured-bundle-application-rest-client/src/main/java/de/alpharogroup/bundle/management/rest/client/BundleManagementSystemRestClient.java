@@ -50,120 +50,102 @@ import lombok.Getter;
  * The class {@link BundleManagementSystemRestClient} is a rest client for the
  * bundle-management-system that are persists in the database.
  */
+@Getter
 public class BundleManagementSystemRestClient extends AbstractRestClient {
 
 	/**
 	 * The {@link AddressesResource}.
 	 */
-	@Getter
 	private final AddressesResource addressesResource;
 
 	/**
 	 * The {@link CountriesResource}.
 	 */
-	@Getter
 	private final CountriesResource countriesResource;
 
 	/**
 	 * The {@link FederalstatesResource}.
 	 */
-	@Getter
 	private final FederalstatesResource federalstatesResource;
 
 	/**
 	 * The {@link ZipcodesResource}.
 	 */
-	@Getter
 	private final ZipcodesResource zipcodesResource;
 
 	/**
 	 * The {@link ResourcesResource}.
 	 */
-	@Getter
 	private final ResourcesResource resourcesResource;
 
 	/**
 	 * The {@link AuthenticationsResource}.
 	 */
-	@Getter
 	private final AuthenticationsResource authenticationsResource;
 
 	/**
 	 * The {@link ContactmethodsResource}.
 	 */
-	@Getter
 	private final ContactmethodsResource contactmethodsResource;
 
 	/**
 	 * The {@link PermissionsResource}.
 	 */
-	@Getter
 	private final PermissionsResource permissionsResource;
 
 	/**
 	 * The {@link RecommendationsResource}.
 	 */
-	@Getter
 	private final RecommendationsResource recommendationsResource;
 
 	/**
 	 * The {@link RelationPermissionsResource}.
 	 */
-	@Getter
 	private final RelationPermissionsResource relationPermissionsResource;
 
 	/**
 	 * The {@link ResetPasswordsResource}.
 	 */
-	@Getter
 	private final ResetPasswordsResource resetPasswordsResource;
 
 	/**
 	 * The {@link RobinsonsResource}.
 	 */
-	@Getter
 	private final RobinsonsResource robinsonsResource;
 
 	/**
 	 * The {@link RolesResource}.
 	 */
-	@Getter
 	private final RolesResource rolesResource;
 
 	/**
 	 * The {@link RuleViolationsResource}.
 	 */
-	@Getter
 	private final RuleViolationsResource ruleViolationsResource;
 
 	/**
 	 * The {@link UserCreditsResource}.
 	 */
-	@Getter
 	private final UserCreditsResource userCreditsResource;
 
 	/**
 	 * The {@link UserDatasResource}.
 	 */
-	@Getter
 	private final UserDatasResource userDatasResource;
 
 	/**
 	 * The {@link UserDatasResource}.
 	 */
-	@Getter
 	private final UserManagementResource userManagementResource;
 
 	/**
 	 * The {@link UsersResource}.
 	 */
-	@Getter
 	private final UsersResource usersResource;
 
 	/**
 	 * The {@link ResourcebundlesResource}.
 	 */
-	@Getter
 	private final ResourcebundlesResource resourcebundlesResource;
 
 	/**
