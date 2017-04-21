@@ -31,14 +31,17 @@ import java.util.Properties;
 
 import de.alpharogroup.db.init.AbstractDatabaseInitialization;
 
-public class DatabaseInitialization extends AbstractDatabaseInitialization {
+public class DatabaseInitialization extends AbstractDatabaseInitialization
+{
 
-	public DatabaseInitialization(final Properties databaseProperties) {
+	public DatabaseInitialization(final Properties databaseProperties)
+	{
 		super(databaseProperties);
 	}
 
 	@Override
-	protected List<File> getScriptFiles() {
+	protected List<File> getScriptFiles()
+	{
 		final List<File> scriptFiles = new ArrayList<>();
 		return scriptFiles;
 	}

@@ -51,7 +51,8 @@ import lombok.Getter;
  * bundle-management-system that are persists in the database.
  */
 @Getter
-public class BundleManagementSystemRestClient extends AbstractRestClient {
+public class BundleManagementSystemRestClient extends AbstractRestClient
+{
 
 	/**
 	 * The {@link AddressesResource}.
@@ -149,10 +150,10 @@ public class BundleManagementSystemRestClient extends AbstractRestClient {
 	private final ResourcebundlesResource resourcebundlesResource;
 
 	/**
-	 * Instantiates a new {@link BundleManagementSystemRestClient} with the
-	 * default base url.
+	 * Instantiates a new {@link BundleManagementSystemRestClient} with the default base url.
 	 */
-	public BundleManagementSystemRestClient() {
+	public BundleManagementSystemRestClient()
+	{
 		this(DEFAULT_BASE_HTTP_URL);
 	}
 
@@ -162,7 +163,8 @@ public class BundleManagementSystemRestClient extends AbstractRestClient {
 	 * @param baseUrl
 	 *            the base url
 	 */
-	public BundleManagementSystemRestClient(final String baseUrl) {
+	public BundleManagementSystemRestClient(final String baseUrl)
+	{
 		super(baseUrl);
 		authenticationsResource = newResource(AuthenticationsResource.class);
 		contactmethodsResource = newResource(ContactmethodsResource.class);

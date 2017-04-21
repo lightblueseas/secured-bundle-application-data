@@ -35,7 +35,8 @@ import de.alpharogroup.user.management.rest.api.UsersResource;
 import de.alpharogroup.user.rest.api.PermissionsResource;
 import de.alpharogroup.user.rest.api.RolesResource;
 
-public class BundleManagementSystemRestClientTest {
+public class BundleManagementSystemRestClientTest
+{
 
 	private TLSClientParameters tlsClientParameters;
 
@@ -50,11 +51,14 @@ public class BundleManagementSystemRestClientTest {
 	private RolesResource rolesResource;
 
 	@BeforeMethod
-	public void setUpMethod() throws Exception {
-		if (restClient == null) {
-			restClient = new BundleManagementSystemRestClient(AbstractRestClient.DEFAULT_BASE_HTTPS_URL);
-			tlsClientParameters = WebClientExtensions.newTLSClientParameters(PathFinder.getSrcTestResourcesDir(),
-					"keystore.ks", "JKS", "wicket");
+	public void setUpMethod() throws Exception
+	{
+		if (restClient == null)
+		{
+			restClient = new BundleManagementSystemRestClient(
+				AbstractRestClient.DEFAULT_BASE_HTTPS_URL);
+			tlsClientParameters = WebClientExtensions.newTLSClientParameters(
+				PathFinder.getSrcTestResourcesDir(), "keystore.ks", "JKS", "wicket");
 			authenticationsResource = restClient.getAuthenticationsResource();
 
 			usersResource = restClient.getUsersResource();
@@ -62,7 +66,8 @@ public class BundleManagementSystemRestClientTest {
 			rolesResource = restClient.getRolesResource();
 			// set client params with key and trust managers. The keystore is
 			// the same as jetty
-			WebClientExtensions.setTLSClientParameters(authenticationsResource, tlsClientParameters);
+			WebClientExtensions.setTLSClientParameters(authenticationsResource,
+				tlsClientParameters);
 			WebClientExtensions.setTLSClientParameters(usersResource, tlsClientParameters);
 			WebClientExtensions.setTLSClientParameters(permissionsResource, tlsClientParameters);
 			WebClientExtensions.setTLSClientParameters(rolesResource, tlsClientParameters);
