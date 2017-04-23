@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" v="1.5.4" status="GENERATED" xs="false" id="_14929514685681" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity xre="false" sm="false" abs="false" class="Contactmethods" visibile="true" minimized="false" rootElement="_14929514685681" id="_14929514685742">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="contactvalue" id="_149295146858128">
+                <jpa:column name="contactvalue" unique="false" nullable="true" insertable="true" updatable="true" table="contactmethods" length="1024"/>
+            </basic>
+            <basic optional="true" attribute-type="Object" visibile="true" name="contactmethod" id="_149295146858129">
+                <jpa:column name="contactmethod" unique="false" nullable="true" insertable="true" updatable="true" table="contactmethods"/>
+                <jpa:lob/>
+            </basic>
+            <many-to-many own="true" connected-entity-id="_149295146857922" connected-attribute-id="_1492951468584144" visibile="true" name="userDataCollection" id="_149295146858130">
+                <join-table name="user_contactmethods">
+                    <jpa:join-column name="contactmethods_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="user_data_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </join-table>
+            </many-to-many>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_149295146858127">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="contactmethods"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="contactmethods"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="DefaultLocaleBasenames" visibile="true" minimized="false" rootElement="_14929514685681" id="_14929514685793">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="Integer" visibile="true" name="version" id="_149295146858132">
+                <jpa:column name="version" unique="false" nullable="true" insertable="true" updatable="true" table="default_locale_basenames"/>
+            </basic>
+            <many-to-one connected-entity-id="_149295146857924" connected-attribute-id="_1492951468585171" visibile="true" name="bundlenameId" id="_149295146858133">
+                <join-column name="bundlename_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-one connected-entity-id="_149295146857915" connected-attribute-id="_149295146858398" visibile="true" name="defaultLocaleId" id="_149295146858234">
+                <join-column name="default_locale_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_149295146858131">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="default_locale_basenames"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="default_locale_basenames"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="RelationPermissions" visibile="true" minimized="false" rootElement="_14929514685681" id="_14929514685794">
+        <jpa:attributes>
+            <many-to-one connected-entity-id="_149295146857923" connected-attribute-id="_1492951468585158" visibile="true" name="subscriberId" id="_149295146858237">
+                <join-column name="subscriber_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-one connected-entity-id="_149295146857923" connected-attribute-id="_1492951468585159" visibile="true" name="providerId" id="_149295146858238">
+                <join-column name="provider_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-many own="true" connected-entity-id="_149295146857912" connected-attribute-id="_149295146858386" visibile="true" name="permissionsCollection" id="_149295146858236"/>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_149295146858235">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="relation_permissions"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="relation_permissions"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Addresses" visibile="true" minimized="false" rootElement="_14929514685681" id="_14929514685795">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="addressComment" id="_149295146858240">
+                <jpa:column name="address_comment" unique="false" nullable="true" insertable="true" updatable="true" table="addresses" length="100"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="geohash" id="_149295146858241">
+                <jpa:column name="geohash" unique="false" nullable="true" insertable="true" updatable="true" table="addresses" length="16"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="latitude" id="_149295146858242">
+                <jpa:column name="latitude" unique="false" nullable="true" insertable="true" updatable="true" table="addresses" length="12"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="longitude" id="_149295146858243">
+                <jpa:column name="longitude" unique="false" nullable="true" insertable="true" updatable="true" table="addresses" length="12"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="street" id="_149295146858244">
+                <jpa:column name="street" unique="false" nullable="true" insertable="true" updatable="true" table="addresses" length="64"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="streetnumber" id="_149295146858245">
+                <jpa:column name="streetnumber" unique="false" nullable="true" insertable="true" updatable="true" table="addresses" length="5"/>
+            </basic>
+            <many-to-one connected-entity-id="_14929514685799" connected-attribute-id="_149295146858270" visibile="true" name="federalstateId" id="_149295146858247">
+                <join-column name="federalstate_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-one connected-entity-id="_149295146857918" connected-attribute-id="_1492951468583110" visibile="true" name="zipcodeId" id="_149295146858248">
+                <join-column name="zipcode_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <one-to-many own="false" connected-entity-id="_149295146857922" connected-attribute-id="_1492951468584147" visibile="true" name="userDataCollection1" id="_149295146858249"/>
+            <many-to-many own="true" connected-entity-id="_149295146857922" connected-attribute-id="_1492951468584145" visibile="true" name="userDataCollection" id="_149295146858246">
+                <join-table name="user_addresses">
+                    <jpa:join-column name="addresses_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="user_data_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </join-table>
+            </many-to-many>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_149295146858239">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="addresses"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="addresses"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Resourcebundles" visibile="true" minimized="false" rootElement="_14929514685681" id="_14929514685796">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="Integer" visibile="true" name="version" id="_149295146858251">
+                <jpa:column name="version" unique="false" nullable="true" insertable="true" updatable="true" table="resourcebundles"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="value" id="_149295146858252">
+                <jpa:column name="value" unique="false" nullable="true" insertable="true" updatable="true" table="resourcebundles" length="2048"/>
+            </basic>
+            <many-to-one connected-entity-id="_149295146857924" connected-attribute-id="_1492951468585172" visibile="true" name="bundlenameId" id="_149295146858253">
+                <join-column name="bundlename_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-one connected-entity-id="_149295146857913" connected-attribute-id="_149295146858391" visibile="true" name="propertiesKeyId" id="_149295146858254">
+                <join-column name="properties_key_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_149295146858250">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="resourcebundles"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="resourcebundles"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="RuleViolations" visibile="true" minimized="false" rootElement="_14929514685681" id="_14929514685797">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="description" id="_149295146858256">
+                <jpa:column name="description" unique="false" nullable="true" insertable="true" updatable="true" table="rule_violations" length="1000"/>
+            </basic>
+            <basic optional="true" attribute-type="Object" visibile="true" name="reason" id="_149295146858257">
+                <jpa:column name="reason" unique="false" nullable="true" insertable="true" updatable="true" table="rule_violations"/>
+                <jpa:lob/>
+            </basic>
+            <many-to-one connected-entity-id="_149295146857923" connected-attribute-id="_1492951468585160" visibile="true" name="detectorUserId" id="_149295146858258">
+                <join-column name="detector_user_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-one connected-entity-id="_149295146857923" connected-attribute-id="_1492951468585161" visibile="true" name="violatorUserId" id="_149295146858259">
+                <join-column name="violator_user_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_149295146858255">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="rule_violations"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="rule_violations"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Roles" visibile="true" minimized="false" rootElement="_14929514685681" id="_14929514685798">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="description" id="_149295146858261">
+                <jpa:column name="description" unique="false" nullable="true" insertable="true" updatable="true" table="roles" length="64"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="rolename" id="_149295146858262">
+                <jpa:column name="rolename" unique="false" nullable="true" insertable="true" updatable="true" table="roles" length="64"/>
+            </basic>
+            <many-to-many own="true" connected-entity-id="_149295146857923" connected-attribute-id="_1492951468585155" visibile="true" name="usersCollection" id="_149295146858263">
+                <join-table name="user_roles">
+                    <jpa:join-column name="role_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="user_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </join-table>
+            </many-to-many>
+            <many-to-many own="true" connected-entity-id="_149295146857912" connected-attribute-id="_149295146858387" visibile="true" name="permissionsCollection" id="_149295146858264"/>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_149295146858260">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="roles"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="roles">
+            <jpa:unique-constraint>
+                <jpa:column-name>rolename</jpa:column-name>
+            </jpa:unique-constraint>
+        </jpa:table>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Federalstates" visibile="true" minimized="false" rootElement="_14929514685681" id="_14929514685799">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="iso3166A2code" id="_149295146858266">
+                <jpa:column name="iso3166_a2code" unique="false" nullable="true" insertable="true" updatable="true" table="federalstates" length="6"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="name" id="_149295146858267">
+                <jpa:column name="name" unique="false" nullable="true" insertable="true" updatable="true" table="federalstates" length="128"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="subdivisionCategory" id="_149295146858268">
+                <jpa:column name="subdivision_category" unique="false" nullable="true" insertable="true" updatable="true" table="federalstates" length="128"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="subdivisionName" id="_149295146858269">
+                <jpa:column name="subdivision_name" unique="false" nullable="true" insertable="true" updatable="true" table="federalstates" length="56"/>
+            </basic>
+            <many-to-one connected-entity-id="_149295146857921" connected-attribute-id="_1492951468584132" visibile="true" name="countryId" id="_149295146858371">
+                <join-column name="country_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <one-to-many own="false" connected-entity-id="_14929514685795" connected-attribute-id="_149295146858247" visibile="true" name="addressesCollection" id="_149295146858270"/>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_149295146858265">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="federalstates"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="federalstates"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Recommendations" visibile="true" minimized="false" rootElement="_14929514685681" id="_149295146857910">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="email" id="_149295146858373">
+                <jpa:column name="email" unique="false" nullable="true" insertable="true" updatable="true" table="recommendations" length="1024"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="invitationText" id="_149295146858374">
+                <jpa:column name="invitation_text" unique="false" nullable="true" insertable="true" updatable="true" table="recommendations" length="1024"/>
+            </basic>
+            <basic optional="true" attribute-type="Boolean" visibile="true" name="sent" id="_149295146858375">
+                <jpa:column name="sent" unique="false" nullable="true" insertable="true" updatable="true" table="recommendations"/>
+            </basic>
+            <many-to-one connected-entity-id="_149295146857923" connected-attribute-id="_1492951468585162" visibile="true" name="userId" id="_149295146858376">
+                <join-column name="user_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-one connected-entity-id="_149295146857923" connected-attribute-id="_1492951468585163" visibile="true" name="recommendedId" id="_149295146858377">
+                <join-column name="recommended_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_149295146858372">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="recommendations"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="recommendations"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Basenames" visibile="true" minimized="false" rootElement="_14929514685681" id="_149295146857911">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="Integer" visibile="true" name="version" id="_149295146858379">
+                <jpa:column name="version" unique="false" nullable="true" insertable="true" updatable="true" table="basenames"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="name" id="_149295146858380">
+                <jpa:column name="name" unique="false" nullable="true" insertable="true" updatable="true" table="basenames" length="512"/>
+            </basic>
+            <one-to-many own="false" connected-entity-id="_149295146857924" connected-attribute-id="_1492951468585173" visibile="true" name="bundlenamesCollection" id="_149295146858381"/>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_149295146858378">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="basenames"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="basenames"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Permissions" visibile="true" minimized="false" rootElement="_14929514685681" id="_149295146857912">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="description" id="_149295146858383">
+                <jpa:column name="description" unique="false" nullable="true" insertable="true" updatable="true" table="permissions" length="64"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="permissionname" id="_149295146858384">
+                <jpa:column name="permissionname" unique="false" nullable="true" insertable="true" updatable="true" table="permissions" length="64"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="shortcut" id="_149295146858385">
+                <jpa:column name="shortcut" unique="false" nullable="true" insertable="true" updatable="true" table="permissions" length="10"/>
+            </basic>
+            <many-to-many connected-entity-id="_14929514685794" connected-attribute-id="_149295146858236" visibile="true" name="relationPermissionsCollection" id="_149295146858386">
+                <join-table name="user_relation_permissions">
+                    <jpa:join-column name="permission_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="user_relation_permission_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </join-table>
+            </many-to-many>
+            <many-to-many connected-entity-id="_14929514685798" connected-attribute-id="_149295146858264" visibile="true" name="rolesCollection" id="_149295146858387">
+                <join-table name="role_permissions">
+                    <jpa:join-column name="permission_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="role_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </join-table>
+            </many-to-many>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_149295146858382">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="permissions"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="permissions">
+            <jpa:unique-constraint>
+                <jpa:column-name>shortcut</jpa:column-name>
+            </jpa:unique-constraint>
+            <jpa:unique-constraint>
+                <jpa:column-name>permissionname</jpa:column-name>
+            </jpa:unique-constraint>
+        </jpa:table>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="PropertiesKeys" visibile="true" minimized="false" rootElement="_14929514685681" id="_149295146857913">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="Integer" visibile="true" name="version" id="_149295146858389">
+                <jpa:column name="version" unique="false" nullable="true" insertable="true" updatable="true" table="properties_keys"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="name" id="_149295146858390">
+                <jpa:column name="name" unique="false" nullable="true" insertable="true" updatable="true" table="properties_keys" length="1024"/>
+            </basic>
+            <one-to-many own="false" connected-entity-id="_14929514685796" connected-attribute-id="_149295146858254" visibile="true" name="resourcebundlesCollection" id="_149295146858391"/>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_149295146858388">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="properties_keys"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="properties_keys"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="UserCredits" visibile="true" minimized="false" rootElement="_14929514685681" id="_149295146857914">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="Integer" visibile="true" name="credits" id="_149295146858393">
+                <jpa:column name="credits" unique="false" nullable="true" insertable="true" updatable="true" table="user_credits"/>
+            </basic>
+            <many-to-one connected-entity-id="_149295146857923" connected-attribute-id="_1492951468585164" visibile="true" name="userId" id="_149295146858394">
+                <join-column name="user_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_149295146858392">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="user_credits"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="user_credits"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="LanguageLocales" visibile="true" minimized="false" rootElement="_14929514685681" id="_149295146857915">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="Integer" visibile="true" name="version" id="_149295146858396">
+                <jpa:column name="version" unique="false" nullable="true" insertable="true" updatable="true" table="language_locales"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="locale" id="_149295146858397">
+                <jpa:column name="locale" unique="false" nullable="true" insertable="true" updatable="true" table="language_locales" length="64"/>
+            </basic>
+            <one-to-many own="false" connected-entity-id="_14929514685793" connected-attribute-id="_149295146858234" visibile="true" name="defaultLocaleBasenamesCollection" id="_149295146858398"/>
+            <one-to-many own="false" connected-entity-id="_149295146857920" connected-attribute-id="_1492951468584126" visibile="true" name="bundleApplicationsCollection" id="_149295146858399"/>
+            <one-to-many own="false" connected-entity-id="_149295146857924" connected-attribute-id="_1492951468585174" visibile="true" name="bundlenamesCollection" id="_1492951468583100"/>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_149295146858395">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="language_locales"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="language_locales">
+            <jpa:unique-constraint>
+                <jpa:column-name>locale</jpa:column-name>
+            </jpa:unique-constraint>
+        </jpa:table>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Languages" visibile="true" minimized="false" rootElement="_14929514685681" id="_149295146857916">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="Integer" visibile="true" name="version" id="_1492951468583102">
+                <jpa:column name="version" unique="false" nullable="true" insertable="true" updatable="true" table="languages"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="name" id="_1492951468583103">
+                <jpa:column name="name" unique="false" nullable="true" insertable="true" updatable="true" table="languages" length="64"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="iso6391" id="_1492951468583104">
+                <jpa:column name="iso639_1" unique="false" nullable="true" insertable="true" updatable="true" table="languages" length="2"/>
+            </basic>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1492951468583101">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="languages"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="languages">
+            <jpa:unique-constraint>
+                <jpa:column-name>name</jpa:column-name>
+            </jpa:unique-constraint>
+        </jpa:table>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Robinsons" visibile="true" minimized="false" rootElement="_14929514685681" id="_149295146857917">
+        <jpa:attributes>
+            <many-to-one connected-entity-id="_149295146857923" connected-attribute-id="_1492951468585165" visibile="true" name="robinsonUserId" id="_1492951468583106">
+                <join-column name="robinson_user_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1492951468583105">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="robinsons"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="robinsons"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Zipcodes" visibile="true" minimized="false" rootElement="_14929514685681" id="_149295146857918">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="city" id="_1492951468583108">
+                <jpa:column name="city" unique="false" nullable="true" insertable="true" updatable="true" table="zipcodes" length="128"/>
+            </basic>
+            <basic optional="false" attribute-type="String" visibile="true" name="zipcode" id="_1492951468583109">
+                <jpa:column name="zipcode" unique="false" nullable="false" insertable="true" updatable="true" table="zipcodes" length="10"/>
+            </basic>
+            <many-to-one connected-entity-id="_149295146857921" connected-attribute-id="_1492951468584133" visibile="true" name="countryId" id="_1492951468583111">
+                <join-column name="country_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <one-to-many own="false" connected-entity-id="_14929514685795" connected-attribute-id="_149295146858248" visibile="true" name="addressesCollection" id="_1492951468583110"/>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1492951468583107">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="zipcodes"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="zipcodes"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Resources" visibile="true" minimized="false" rootElement="_14929514685681" id="_149295146857919">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="checksum" id="_1492951468584113">
+                <jpa:column name="checksum" unique="false" nullable="true" insertable="true" updatable="true" table="resources" length="255"/>
+            </basic>
+            <basic optional="true" attribute-type="byte []" visibile="true" name="content" id="_1492951468584114">
+                <jpa:column name="content" unique="false" nullable="true" insertable="true" updatable="true" table="resources"/>
+                <jpa:lob/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="contenttype" id="_1492951468584115">
+                <jpa:column name="contenttype" unique="false" nullable="true" insertable="true" updatable="true" table="resources" length="64"/>
+            </basic>
+            <basic optional="true" attribute-type="java.util.Date" visibile="true" name="created" id="_1492951468584116">
+                <jpa:column name="created" unique="false" nullable="true" insertable="true" updatable="true" table="resources"/>
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+            </basic>
+            <basic optional="true" attribute-type="Boolean" visibile="true" name="deletedFlag" id="_1492951468584117">
+                <jpa:column name="deleted_flag" unique="false" nullable="true" insertable="true" updatable="true" table="resources"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="description" id="_1492951468584118">
+                <jpa:column name="description" unique="false" nullable="true" insertable="true" updatable="true" table="resources" length="1024"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="filename" id="_1492951468584119">
+                <jpa:column name="filename" unique="false" nullable="true" insertable="true" updatable="true" table="resources" length="1024"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="filesize" id="_1492951468584120">
+                <jpa:column name="filesize" unique="false" nullable="true" insertable="true" updatable="true" table="resources" length="64"/>
+            </basic>
+            <many-to-many own="true" connected-entity-id="_149295146857922" connected-attribute-id="_1492951468584142" visibile="true" name="userDataCollection" id="_1492951468584121">
+                <join-table name="user_resources">
+                    <jpa:join-column name="resources_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="user_data_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </join-table>
+            </many-to-many>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1492951468584112">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="resources"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="resources"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="BundleApplications" visibile="true" minimized="false" rootElement="_14929514685681" id="_149295146857920">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="Integer" visibile="true" name="version" id="_1492951468584123">
+                <jpa:column name="version" unique="false" nullable="true" insertable="true" updatable="true" table="bundle_applications"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="name" id="_1492951468584124">
+                <jpa:column name="name" unique="false" nullable="true" insertable="true" updatable="true" table="bundle_applications" length="1024"/>
+            </basic>
+            <many-to-one connected-entity-id="_149295146857915" connected-attribute-id="_149295146858399" visibile="true" name="defaultLocaleId" id="_1492951468584126">
+                <join-column name="default_locale_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-many own="true" connected-entity-id="_149295146857924" connected-attribute-id="_1492951468585170" visibile="true" name="bundlenamesCollection" id="_1492951468584125">
+                <join-table name="bundle_application_bundlenames">
+                    <jpa:join-column name="application_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="bundlenames_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </join-table>
+            </many-to-many>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1492951468584122">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="bundle_applications"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="bundle_applications">
+            <jpa:unique-constraint>
+                <jpa:column-name>name</jpa:column-name>
+            </jpa:unique-constraint>
+        </jpa:table>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Countries" visibile="true" minimized="false" rootElement="_14929514685681" id="_149295146857921">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="iso3166A2name" id="_1492951468584128">
+                <jpa:column name="iso3166_a2name" unique="false" nullable="true" insertable="true" updatable="true" table="countries" length="2"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="iso3166A3name" id="_1492951468584129">
+                <jpa:column name="iso3166_a3name" unique="false" nullable="true" insertable="true" updatable="true" table="countries" length="3"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="iso3166Number" id="_1492951468584130">
+                <jpa:column name="iso3166_number" unique="false" nullable="true" insertable="true" updatable="true" table="countries" length="3"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="name" id="_1492951468584131">
+                <jpa:column name="name" unique="false" nullable="true" insertable="true" updatable="true" table="countries" length="128"/>
+            </basic>
+            <one-to-many own="false" connected-entity-id="_14929514685799" connected-attribute-id="_149295146858371" visibile="true" name="federalstatesCollection" id="_1492951468584132"/>
+            <one-to-many own="false" connected-entity-id="_149295146857918" connected-attribute-id="_1492951468583111" visibile="true" name="zipcodesCollection" id="_1492951468584133"/>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1492951468584127">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="countries"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="countries"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="UserData" visibile="true" minimized="false" rootElement="_14929514685681" id="_149295146857922">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="String" visibile="true" name="birthname" id="_1492951468584135">
+                <jpa:column name="birthname" unique="false" nullable="true" insertable="true" updatable="true" table="user_data" length="64"/>
+            </basic>
+            <basic optional="true" attribute-type="java.util.Date" visibile="true" name="dateofbirth" id="_1492951468584136">
+                <jpa:column name="dateofbirth" unique="false" nullable="true" insertable="true" updatable="true" table="user_data"/>
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="firstname" id="_1492951468584137">
+                <jpa:column name="firstname" unique="false" nullable="true" insertable="true" updatable="true" table="user_data" length="64"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="ipAddress" id="_1492951468584138">
+                <jpa:column name="ip_address" unique="false" nullable="true" insertable="true" updatable="true" table="user_data" length="16"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="lastname" id="_1492951468584139">
+                <jpa:column name="lastname" unique="false" nullable="true" insertable="true" updatable="true" table="user_data" length="64"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="locale" id="_1492951468584140">
+                <jpa:column name="locale" unique="false" nullable="true" insertable="true" updatable="true" table="user_data" length="12"/>
+            </basic>
+            <basic optional="true" attribute-type="Object" visibile="true" name="gender" id="_1492951468584141">
+                <jpa:column name="gender" unique="false" nullable="true" insertable="true" updatable="true" table="user_data"/>
+                <jpa:lob/>
+            </basic>
+            <many-to-one connected-entity-id="_14929514685795" connected-attribute-id="_149295146858249" visibile="true" name="primaryAddressId" id="_1492951468584147">
+                <join-column name="primary_address_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-one connected-entity-id="_149295146857923" connected-attribute-id="_1492951468585166" visibile="true" name="owner" id="_1492951468584148">
+                <join-column name="owner" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-many own="false" connected-entity-id="_149295146857919" connected-attribute-id="_1492951468584121" visibile="true" name="resourcesCollection" id="_1492951468584142"/>
+            <many-to-many own="true" connected-entity-id="_149295146857923" connected-attribute-id="_1492951468585156" visibile="true" name="usersCollection" id="_1492951468584143">
+                <join-table name="blacklisted_contacts">
+                    <jpa:join-column name="user_data_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="blacklisted_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </join-table>
+            </many-to-many>
+            <many-to-many own="false" connected-entity-id="_14929514685742" connected-attribute-id="_149295146858130" visibile="true" name="contactmethodsCollection" id="_1492951468584144"/>
+            <many-to-many own="false" connected-entity-id="_14929514685795" connected-attribute-id="_149295146858246" visibile="true" name="addressesCollection" id="_1492951468584145"/>
+            <many-to-many own="true" connected-entity-id="_149295146857923" connected-attribute-id="_1492951468585157" visibile="true" name="usersCollection1" id="_1492951468584146">
+                <join-table name="user_contacts">
+                    <jpa:join-column name="user_data_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="user_contact_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </join-table>
+            </many-to-many>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1492951468584134">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="user_data"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="user_data"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Users" visibile="true" minimized="false" rootElement="_14929514685681" id="_149295146857923">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="Boolean" visibile="true" name="active" id="_1492951468585150">
+                <jpa:column name="active" unique="false" nullable="true" insertable="true" updatable="true" table="users"/>
+            </basic>
+            <basic optional="true" attribute-type="Boolean" visibile="true" name="locked" id="_1492951468585151">
+                <jpa:column name="locked" unique="false" nullable="true" insertable="true" updatable="true" table="users"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="pw" id="_1492951468585152">
+                <jpa:column name="pw" unique="false" nullable="true" insertable="true" updatable="true" table="users" length="1024"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="salt" id="_1492951468585153">
+                <jpa:column name="salt" unique="false" nullable="true" insertable="true" updatable="true" table="users" length="8"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="username" id="_1492951468585154">
+                <jpa:column name="username" unique="false" nullable="true" insertable="true" updatable="true" table="users" length="256"/>
+            </basic>
+            <one-to-many own="false" connected-entity-id="_14929514685794" connected-attribute-id="_149295146858237" visibile="true" name="relationPermissionsCollection" id="_1492951468585158"/>
+            <one-to-many own="false" connected-entity-id="_14929514685794" connected-attribute-id="_149295146858238" visibile="true" name="relationPermissionsCollection1" id="_1492951468585159"/>
+            <one-to-many own="false" connected-entity-id="_14929514685797" connected-attribute-id="_149295146858258" visibile="true" name="ruleViolationsCollection" id="_1492951468585160"/>
+            <one-to-many own="false" connected-entity-id="_14929514685797" connected-attribute-id="_149295146858259" visibile="true" name="ruleViolationsCollection1" id="_1492951468585161"/>
+            <one-to-many own="false" connected-entity-id="_149295146857910" connected-attribute-id="_149295146858376" visibile="true" name="recommendationsCollection" id="_1492951468585162"/>
+            <one-to-many own="false" connected-entity-id="_149295146857910" connected-attribute-id="_149295146858377" visibile="true" name="recommendationsCollection1" id="_1492951468585163"/>
+            <one-to-many own="false" connected-entity-id="_149295146857914" connected-attribute-id="_149295146858394" visibile="true" name="userCreditsCollection" id="_1492951468585164"/>
+            <one-to-many own="false" connected-entity-id="_149295146857917" connected-attribute-id="_1492951468583106" visibile="true" name="robinsonsCollection" id="_1492951468585165"/>
+            <one-to-many own="false" connected-entity-id="_149295146857922" connected-attribute-id="_1492951468584148" visibile="true" name="userDataCollection2" id="_1492951468585166"/>
+            <one-to-many own="false" connected-entity-id="_149295146857926" connected-attribute-id="_1492951468585183" visibile="true" name="resetPasswordsCollection" id="_1492951468585167"/>
+            <many-to-many own="false" connected-entity-id="_14929514685798" connected-attribute-id="_149295146858263" visibile="true" name="rolesCollection" id="_1492951468585155"/>
+            <many-to-many own="false" connected-entity-id="_149295146857922" connected-attribute-id="_1492951468584143" visibile="true" name="userDataCollection" id="_1492951468585156"/>
+            <many-to-many own="false" connected-entity-id="_149295146857922" connected-attribute-id="_1492951468584146" visibile="true" name="userDataCollection1" id="_1492951468585157"/>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1492951468585149">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="users"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="users">
+            <jpa:unique-constraint>
+                <jpa:column-name>username</jpa:column-name>
+            </jpa:unique-constraint>
+        </jpa:table>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Bundlenames" visibile="true" minimized="false" rootElement="_14929514685681" id="_149295146857924">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="Integer" visibile="true" name="version" id="_1492951468585169">
+                <jpa:column name="version" unique="false" nullable="true" insertable="true" updatable="true" table="bundlenames"/>
+            </basic>
+            <many-to-one connected-entity-id="_149295146857911" connected-attribute-id="_149295146858381" visibile="true" name="baseNameId" id="_1492951468585173">
+                <join-column name="base_name_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <many-to-one connected-entity-id="_149295146857915" connected-attribute-id="_1492951468583100" visibile="true" name="localeId" id="_1492951468585174">
+                <join-column name="locale_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <one-to-many own="false" connected-entity-id="_14929514685793" connected-attribute-id="_149295146858133" visibile="true" name="defaultLocaleBasenamesCollection" id="_1492951468585171"/>
+            <one-to-many own="false" connected-entity-id="_14929514685796" connected-attribute-id="_149295146858253" visibile="true" name="resourcebundlesCollection" id="_1492951468585172"/>
+            <many-to-many own="false" connected-entity-id="_149295146857920" connected-attribute-id="_1492951468584125" visibile="true" name="bundleApplicationsCollection" id="_1492951468585170"/>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1492951468585168">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="bundlenames"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="bundlenames"/>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="UserTokens" visibile="true" minimized="false" rootElement="_14929514685681" id="_149295146857925">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="java.util.Date" visibile="true" name="expiry" id="_1492951468585176">
+                <jpa:column name="expiry" unique="false" nullable="true" insertable="true" updatable="true" table="user_tokens"/>
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="token" id="_1492951468585177">
+                <jpa:column name="token" unique="false" nullable="true" insertable="true" updatable="true" table="user_tokens" length="128"/>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="username" id="_1492951468585178">
+                <jpa:column name="username" unique="false" nullable="true" insertable="true" updatable="true" table="user_tokens" length="256"/>
+            </basic>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1492951468585175">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="user_tokens"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="user_tokens">
+            <jpa:unique-constraint>
+                <jpa:column-name>username</jpa:column-name>
+            </jpa:unique-constraint>
+            <jpa:unique-constraint>
+                <jpa:column-name>token</jpa:column-name>
+            </jpa:unique-constraint>
+        </jpa:table>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="ResetPasswords" visibile="true" minimized="false" rootElement="_14929514685681" id="_149295146857926">
+        <jpa:attributes>
+            <basic optional="true" attribute-type="java.util.Date" visibile="true" name="expiryDate" id="_1492951468585180">
+                <jpa:column name="expiry_date" unique="false" nullable="true" insertable="true" updatable="true" table="reset_passwords"/>
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+            </basic>
+            <basic optional="true" attribute-type="String" visibile="true" name="generatedPassword" id="_1492951468585181">
+                <jpa:column name="generated_password" unique="false" nullable="true" insertable="true" updatable="true" table="reset_passwords" length="1024"/>
+            </basic>
+            <basic optional="true" attribute-type="java.util.Date" visibile="true" name="starttime" id="_1492951468585182">
+                <jpa:column name="starttime" unique="false" nullable="true" insertable="true" updatable="true" table="reset_passwords"/>
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+            </basic>
+            <many-to-one connected-entity-id="_149295146857923" connected-attribute-id="_1492951468585167" visibile="true" name="userId" id="_1492951468585183">
+                <join-column name="user_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </many-to-one>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_1492951468585179">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="reset_passwords"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="reset_passwords"/>
+    </jpa:entity>
+    <jpa:diagram>
+        <plane elementRef="_14929514685681"/>
+    </jpa:diagram>
+</jpa:entity-mappings>
