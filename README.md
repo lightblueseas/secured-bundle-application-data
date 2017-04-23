@@ -1,6 +1,13 @@
-# secured-bundle-application-data
+# Overview
 
 The project holds backend data for simple user management.
+
+# ERD-Diagramm
+
+The erd-diagramm for this database looks as follows: ![erd-diagramm](https://raw.githubusercontent.com/lightblueseas/secured-bundle-application-data/develop/secured-bundle-application-init/src/main/resources/erd/erd-diagramm-secured-bundle-application.jpa.png)
+
+This erd-diagramm was created with [Jeddict plugin from netbeans as JPA Modeler](http://plugins.netbeans.org/plugin/53057/jpa-modeler)  and [Jeddict](https://jeddict.github.io/)
+
 
 ## License
 
@@ -67,6 +74,9 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 			</dependency>
 			...
 		</dependencies>
+		 
+## Open Issues
+[![Open Issues](https://img.shields.io/github/issues/astrapi69/secured-bundle-application-data.svg?style=flat)](https://github.com/astrapi69/secured-bundle-application-data/issues) 
 
 ## Want to Help and improve it? ###
 
