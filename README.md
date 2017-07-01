@@ -76,7 +76,7 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 		</dependencies>
 		 
 ## Open Issues
-[![Open Issues](https://img.shields.io/github/issues/astrapi69/secured-bundle-application-data.svg?style=flat)](https://github.com/astrapi69/secured-bundle-application-data/issues) 
+[![Open Issues](https://img.shields.io/github/issues/lightblueseas/secured-bundle-application-data.svg?style=flat)](https://github.com/lightblueseas/secured-bundle-application-data/issues) 
 
 ## Want to Help and improve it? ###
 

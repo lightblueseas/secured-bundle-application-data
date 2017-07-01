@@ -66,10 +66,6 @@
 		<jdbc:script location="classpath:dll/inserts/initializeSchema.sql" />
 	</jdbc:embedded-database>
 
-	<jdbc:initialize-database data-source="dataSource">
-		<jdbc:script location="classpath:dll/inserts/insert_resourcebundles.sql" />
-	</jdbc:initialize-database>
-
 	<!-- H2 tomcat.dbcp DataSource configuration -->
 	<bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource">
 		<property name="driverClassName" value="${jdbc.driver}" />
@@ -120,7 +116,6 @@
 
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-
 		<property name="persistenceUnitName" value="${jdbc.db.name}" />
 		<property name="dataSource" ref="dataSource" />
 		<property name="jpaVendorAdapter" ref="jpaVendorAdapter" />

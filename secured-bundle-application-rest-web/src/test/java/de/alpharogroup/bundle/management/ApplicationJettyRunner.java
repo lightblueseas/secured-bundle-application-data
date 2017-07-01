@@ -153,7 +153,9 @@ public class ApplicationJettyRunner
 				.build());
 		servletContextHandler.addEventListener(new ContextLoaderListener());
 		final Jetty9RunConfiguration configuration = Jetty9RunConfiguration.builder()
-			.servletContextHandler(servletContextHandler).httpPort(8080).httpsPort(8443)
+			.servletContextHandler(servletContextHandler)
+			.httpPort(9090)
+			.httpsPort(9443)
 			.keyStorePassword("wicket").keyStorePathResource("/keystore.ks").build();
 		final Server server = new Server();
 		Jetty9Runner.runServletContextHandler(server, configuration);
