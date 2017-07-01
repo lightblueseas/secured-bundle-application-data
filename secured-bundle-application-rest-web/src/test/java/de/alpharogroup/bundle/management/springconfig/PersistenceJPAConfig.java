@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -23,8 +24,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
+@Import({EhCacheConfiguration.class ,CachingConfiguration.class})
 @ComponentScan(
-		basePackages = 
+		basePackages =
 	{
 		"de.alpharogroup.db.resource.bundles.daos",
 		"de.alpharogroup.db.resource.bundles.entities",
@@ -33,33 +35,33 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 		"de.alpharogroup.db.resource.bundles.service.api",
 		"de.alpharogroup.db.resource.bundles.rest",
 		"de.alpharogroup.db.resource.bundles.rest.api",
-		
+
 		"de.alpharogroup.address.book.daos",
 		"de.alpharogroup.address.book.entities",
 		"de.alpharogroup.address.book.mapper",
 		"de.alpharogroup.address.book.service.api",
 		"de.alpharogroup.address.book.service",
 		"de.alpharogroup.address.book.service.mapper",
-		
+
 		"de.alpharogroup.resource.system.daos",
 		"de.alpharogroup.resource.system.entities",
 		"de.alpharogroup.resource.system.mapper",
 		"de.alpharogroup.resource.system.service.api",
-		"de.alpharogroup.resource.system.service",	
-		
+		"de.alpharogroup.resource.system.service",
+
 		"de.alpharogroup.user.repositories",
 		"de.alpharogroup.user.entities",
 		"de.alpharogroup.user.mapper",
 		"de.alpharogroup.user.service.api",
 		"de.alpharogroup.user.service",
 		"de.alpharogroup.user.service.mapper",
-		
+
 		"de.alpharogroup.user.management.daos",
 		"de.alpharogroup.user.management.entities",
 		"de.alpharogroup.user.management.mapper",
 		"de.alpharogroup.user.management.service.api",
 		"de.alpharogroup.user.management.service",
-		"de.alpharogroup.user.management.service.mapper",		
+		"de.alpharogroup.user.management.service.mapper",
 	}
 		)
 public class PersistenceJPAConfig
@@ -146,7 +148,7 @@ public class PersistenceJPAConfig
 	    // testing
 	    hibernateProperties.put("hibernate.bytecode.use_reflection_optimizer", false);
 	    hibernateProperties.put("hibernate.check_nullability", false);
-	    hibernateProperties.put("hibernate.search.autoregister_listeners", false);	  
+	    hibernateProperties.put("hibernate.search.autoregister_listeners", false);
 		return hibernateProperties;
 	}
 }
