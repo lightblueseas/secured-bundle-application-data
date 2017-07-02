@@ -16,18 +16,11 @@
 /.project
 /.classpath
 /.settings
-/.tern-project
-
-##################
-# netbeans files #
-##################
-/nb-configuration.xml
 
 #########################
 # maven generated files #
 #########################
 /target
-*.versionsBackup
 
 #############
 # Zip files #
@@ -62,3 +55,4 @@
 /build
 /.gradle
 /gradle
+/reports
