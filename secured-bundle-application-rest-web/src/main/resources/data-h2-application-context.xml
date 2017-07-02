@@ -62,6 +62,16 @@
 		</property>
 	</bean>
 
+	<bean id="persistenceUnitManager"
+		class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
+		<property name="persistenceXmlLocations">
+			<list>
+				<value>classpath:META-INF/persistence-h2.xml</value>
+			</list>
+		</property>
+		<property name="defaultDataSource" ref="dataSource" />
+	</bean>
+
 	<jdbc:embedded-database id="dataSource" type="H2">
 		<jdbc:script location="classpath:dll/inserts/initializeSchema.sql" />
 	</jdbc:embedded-database>
@@ -102,16 +112,6 @@
 		<property name="showSql" value="true" />
 		<property name="database" value="H2" />
 		<property name="databasePlatform" value="org.hibernate.dialect.H2Dialect" />
-	</bean>
-
-	<bean id="persistenceUnitManager"
-		class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
-		<property name="persistenceXmlLocations">
-			<list>
-				<value>classpath:META-INF/persistence-h2.xml</value>
-			</list>
-		</property>
-		<property name="defaultDataSource" ref="dataSource" />
 	</bean>
 
 	<bean id="entityManagerFactory"
