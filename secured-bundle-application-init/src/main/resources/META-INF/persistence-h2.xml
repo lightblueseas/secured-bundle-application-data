@@ -39,11 +39,17 @@
 	
         <properties>
 			<property name="hibernate.connection.driver_class" value="org.h2.Driver" />
-			<property name="hibernate.connection.url" value="jdbc:h2:mem:./bundlemanagement;USER=SA;PASSWORD=;MODE=PostgreSQL;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1" />
+			<property name="hibernate.connection.url" value="jdbc:h2:file:~/bundlemanagement;USER=SA;PASSWORD=;MODE=PostgreSQL;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1" />
 			<property name="hibernate.connection.user" value="sa" />
 			<property name="hibernate.connection.password" value="" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
-            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.show_sql" value="true"/> 
+            <property name="hibernate.event.merge.entity_copy_observer" value="allow"/>           
+            
+		   	<property name="hibernate.cache.region.factory_class" value ="org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory" />
+			<property name="hibernate.cache.use_second_level_cache"	value="false" />
+			<property name="hibernate.cache.use_query_cache" value="false" />
+			<property name="net.sf.ehcache.configurationResourceName" value="ehcache.xml"/>
         </properties>
 
 	</persistence-unit>
