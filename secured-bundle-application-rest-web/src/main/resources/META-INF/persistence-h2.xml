@@ -39,7 +39,7 @@
 	
         <properties>
 			<property name="hibernate.connection.driver_class" value="org.h2.Driver" />
-			<property name="hibernate.connection.url" value="jdbc:h2:file:~.bundle-app/bundlemanagement" />
+			<property name="hibernate.connection.url" value="jdbc:h2:file:~/bundlemanagement" />
 			<property name="hibernate.connection.user" value="sa" />
 			<property name="hibernate.connection.password" value="" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
