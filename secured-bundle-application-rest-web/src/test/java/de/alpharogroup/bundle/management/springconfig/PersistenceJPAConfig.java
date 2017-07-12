@@ -52,40 +52,20 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan(
 		basePackages =
 	{
-		"de.alpharogroup.db.resource.bundles.daos",
-		"de.alpharogroup.db.resource.bundles.entities",
-		"de.alpharogroup.db.resource.bundles.mapper",
-		"de.alpharogroup.db.resource.bundles.service",
-		"de.alpharogroup.db.resource.bundles.service.api",
-		"de.alpharogroup.db.resource.bundles.rest",
-		"de.alpharogroup.db.resource.bundles.rest.api",
+		"de.alpharogroup.db.resource.bundles.*",
+		"de.alpharogroup.db.resource.bundles.*.*",
 
-		"de.alpharogroup.address.book.daos",
-		"de.alpharogroup.address.book.entities",
-		"de.alpharogroup.address.book.mapper",
-		"de.alpharogroup.address.book.service.api",
-		"de.alpharogroup.address.book.service",
-		"de.alpharogroup.address.book.service.mapper",
+		"de.alpharogroup.address.book.*",
+		"de.alpharogroup.address.book.*.*",
 
-		"de.alpharogroup.resource.system.daos",
-		"de.alpharogroup.resource.system.entities",
-		"de.alpharogroup.resource.system.mapper",
-		"de.alpharogroup.resource.system.service.api",
-		"de.alpharogroup.resource.system.service",
+		"de.alpharogroup.resource.system.*",
+		"de.alpharogroup.resource.system.*.*",
 
-		"de.alpharogroup.user.repositories",
-		"de.alpharogroup.user.entities",
-		"de.alpharogroup.user.mapper",
-		"de.alpharogroup.user.service.api",
-		"de.alpharogroup.user.service",
-		"de.alpharogroup.user.service.mapper",
+		"de.alpharogroup.user.*",
+		"de.alpharogroup.user.*.*",
 
-		"de.alpharogroup.user.management.daos",
-		"de.alpharogroup.user.management.entities",
-		"de.alpharogroup.user.management.mapper",
-		"de.alpharogroup.user.management.service.api",
-		"de.alpharogroup.user.management.service",
-		"de.alpharogroup.user.management.service.mapper",
+		"de.alpharogroup.user.management.*",
+		"de.alpharogroup.user.management.*.*",
 	}
 		)
 public class PersistenceJPAConfig
