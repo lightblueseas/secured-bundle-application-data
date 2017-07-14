@@ -42,32 +42,24 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@Import({EhCacheConfiguration.class ,CachingConfiguration.class})
-@ComponentScan(
-		basePackages =
-	{
-		"de.alpharogroup.db.resource.bundles.*",
+@Import({ EhCacheConfiguration.class, CachingConfiguration.class })
+@ComponentScan(basePackages = { "de.alpharogroup.db.resource.bundles.*",
 		"de.alpharogroup.db.resource.bundles.*.*",
 
-		"de.alpharogroup.address.book.*",
-		"de.alpharogroup.address.book.*.*",
+		"de.alpharogroup.address.book.*", "de.alpharogroup.address.book.*.*",
 
-		"de.alpharogroup.resource.system.*",
-		"de.alpharogroup.resource.system.*.*",
+		"de.alpharogroup.resource.system.*", "de.alpharogroup.resource.system.*.*",
 
-		"de.alpharogroup.user.*",
-		"de.alpharogroup.user.*.*",
+		"de.alpharogroup.user.*", "de.alpharogroup.user.*.*",
 
-		"de.alpharogroup.user.management.*",
-		"de.alpharogroup.user.management.*.*",
-	}
-		)
+		"de.alpharogroup.user.management.*", "de.alpharogroup.user.management.*.*", })
 public class PersistenceJPAConfig
 {
 	@Autowired
@@ -77,14 +69,15 @@ public class PersistenceJPAConfig
 	private DataSource dataSource;
 
 	@Bean
-	public LocalContainerEntityManagerFactoryBean entityManagerFactory()
+	public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean()
 	{
 		final LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 
 		em.setPersistenceUnitName("bundlemanagement");
 		em.setDataSource(dataSource());
 
-		final JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+		final JpaVendorAdapter vendorAdapter = SpringEntityManagerFactory.newJpaVendorAdapter(Database.H2);
+			new HibernateJpaVendorAdapter();
 		em.setJpaVendorAdapter(vendorAdapter);
 		em.setJpaProperties(additionalProperties());
 		return em;
@@ -93,26 +86,30 @@ public class PersistenceJPAConfig
 	@Bean
 	public DataSource dataSource()
 	{
-		final DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("org.h2.Driver");
-		dataSource.setUrl("jdbc:h2:file:~/bundlemanagement;MODE=PostgreSQL;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1");
-		dataSource.setUsername("sa");
-		dataSource.setPassword("");
-		return dataSource;
+
+		final JdbcUrlBean bean = JdbcUrlBean.builder().protocol("jdbc:h2:")
+			.database("file:~/bundlemanagement").parameter("MODE=PostgreSQL")
+			.parameter("DB_CLOSE_ON_EXIT=FALSE").parameter("DB_CLOSE_DELAY=-1").build();
+
+		final DataSourceBean dataSourceBean = DataSourceBean.builder()
+			.url(JdbcUrlBean.newH2JdbcUrl(bean)).driverClassName("org.h2.Driver").username("sa")
+			.password("").build();
+
+		return SpringEntityManagerFactory.newDataSource(dataSourceBean);
 	}
 
 	@Bean
-	public JdbcTemplate jdbcTemplate() {
-		JdbcTemplate jdbcTemplate;
-		jdbcTemplate = new JdbcTemplate(dataSource);
+	public JdbcTemplate jdbcTemplate()
+	{
+		final JdbcTemplate jdbcTemplate = SpringEntityManagerFactory.newJdbcTemplate(dataSource);
 		return jdbcTemplate;
 	}
 
 	@Bean
 	public PlatformTransactionManager transactionManager()
 	{
-		final JpaTransactionManager transactionManager = new JpaTransactionManager();
-		transactionManager.setEntityManagerFactory(entityManagerFactory);
+		final JpaTransactionManager transactionManager = SpringEntityManagerFactory
+			.newTransactionManager(entityManagerFactory);
 		return transactionManager;
 	}
 
@@ -136,23 +133,26 @@ public class PersistenceJPAConfig
 	{
 		final Properties hibernateProperties = new Properties();
 		hibernateProperties.put("hibernate.connection.characterEncoding", "UTF-8");
-	    hibernateProperties.put("hibernate.connection.charSet", "UTF-8");
-	    hibernateProperties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQL82Dialect");
-	    hibernateProperties.put("hibernate.show_sql", "true");
-	    hibernateProperties.put("hibernate.format_sql", "true");
-	    //hibernateProperties.put("hibernate.generate_statistics", env.getProperty("hibernate.generate_statistics"));
-	    hibernateProperties.put("hibernate.enable_lazy_load_no_trans", "true");
+		hibernateProperties.put("hibernate.connection.charSet", "UTF-8");
+		hibernateProperties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQL82Dialect");
+		hibernateProperties.put("hibernate.show_sql", "true");
+		hibernateProperties.put("hibernate.format_sql", "true");
+		// hibernateProperties.put("hibernate.generate_statistics",
+		// env.getProperty("hibernate.generate_statistics"));
+		hibernateProperties.put("hibernate.enable_lazy_load_no_trans", "true");
 
-	    // second level cache
-	    hibernateProperties.put("hibernate.cache.use_second_level_cache", "true");
-	    hibernateProperties.put("hibernate.cache.use_query_cache", "true");
-	    hibernateProperties.put("hibernate.cache.region.factory_class", "org.hibernate.cache.ehcache.EhCacheRegionFactory");
-	    //hibernateProperties.put("net.sf.ehcache.configurationResourceName", env.getProperty("net.sf.ehcache.configurationResourceName"));
+		// second level cache
+		hibernateProperties.put("hibernate.cache.use_second_level_cache", "true");
+		hibernateProperties.put("hibernate.cache.use_query_cache", "true");
+		hibernateProperties.put("hibernate.cache.region.factory_class",
+			"org.hibernate.cache.ehcache.EhCacheRegionFactory");
+		// hibernateProperties.put("net.sf.ehcache.configurationResourceName",
+		// env.getProperty("net.sf.ehcache.configurationResourceName"));
 
-	    // testing
-	    hibernateProperties.put("hibernate.bytecode.use_reflection_optimizer", false);
-	    hibernateProperties.put("hibernate.check_nullability", false);
-	    hibernateProperties.put("hibernate.search.autoregister_listeners", false);
+		// testing
+		hibernateProperties.put("hibernate.bytecode.use_reflection_optimizer", false);
+		hibernateProperties.put("hibernate.check_nullability", false);
+		hibernateProperties.put("hibernate.search.autoregister_listeners", false);
 		return hibernateProperties;
 	}
 }
