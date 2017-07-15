@@ -100,7 +100,17 @@
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 		</dependency>
+		<!-- RESOURCEBUNDLE-CORE DEPENDENCIES -->
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>resourcebundle-inspector</artifactId>
+		</dependency>
 		<!-- JETTY 9 DEPENDENCIES FOR TESTING -->
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-jmx</artifactId>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-server</artifactId>
@@ -117,11 +127,6 @@
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-util</artifactId>
 			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-jmx</artifactId>
 		</dependency>
 
 		<dependency>
@@ -159,10 +164,11 @@
 			<artifactId>tomcat-jdbc</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- RESOURCEBUNDLE-CORE DEPENDENCIES -->
+
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
-			<artifactId>resourcebundle-inspector</artifactId>
+			<artifactId>data-initialization</artifactId>
+			<scope>test</scope>
 		</dependency>
 
 	</dependencies>

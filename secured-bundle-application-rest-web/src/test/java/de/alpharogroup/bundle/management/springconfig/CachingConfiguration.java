@@ -35,6 +35,8 @@ import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import de.alpharogroup.springconfig.SpringCacheConfigurationFactory;
+
 @Configuration
 @EnableCaching
 public class CachingConfiguration implements CachingConfigurer {
