@@ -1,8 +1,10 @@
 package de.alpharogroup.bundle.management.springconfig;
 
 import static org.testng.AssertJUnit.assertEquals;
+
 import org.testng.annotations.Test;
 
+@Deprecated
 public class JdbcUrlBeanTest
 {
 

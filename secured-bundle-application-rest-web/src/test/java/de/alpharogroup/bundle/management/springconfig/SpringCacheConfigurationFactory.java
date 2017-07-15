@@ -13,15 +13,22 @@ import org.springframework.cache.interceptor.SimpleCacheResolver;
 import org.springframework.cache.interceptor.SimpleKeyGenerator;
 import org.springframework.cache.support.CompositeCacheManager;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.orm.jpa.JpaVendorAdapter;
-import org.springframework.orm.jpa.vendor.Database;
-import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 import com.google.common.collect.Lists;
 
+/**
+ * A factory for creating cache configuration objects.
+ */
+@Deprecated
 public class SpringCacheConfigurationFactory
 {
 
+	/**
+	 * New cache manager.
+	 *
+	 * @param cacheCacheManager the cache cache manager
+	 * @return the cache manager
+	 */
 	public static CacheManager newCacheManager(final CacheManager... cacheCacheManager)
 	{
 

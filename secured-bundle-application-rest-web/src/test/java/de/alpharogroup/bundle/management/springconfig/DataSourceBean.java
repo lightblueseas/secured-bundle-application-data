@@ -15,6 +15,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
+@Deprecated
 public class DataSourceBean
 {
 	public static DataSourceBeanBuilder DEFAULT_H2_BUILDER = DataSourceBean

@@ -39,10 +39,8 @@ import org.springframework.context.annotation.Import;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.jpa.JpaTransactionManager;
-import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
-import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -99,7 +97,6 @@ public class PersistenceJPAConfig
 	@Autowired
 	private DataSource dataSource;
 
-	/** The resourcebundles service. */
 	@Autowired
 	private ResourcebundlesService resourcebundlesService;
 
@@ -122,14 +119,15 @@ public class PersistenceJPAConfig
 	@Autowired
 	private DefaultLocaleBaseNamesService defaultLocaleBaseNamesService;
 
-	/** The properties keys service. */
 	@Autowired
 	private PropertiesKeysService propertiesKeysService;
 
 	@Autowired
 	private CountriesService countriesService;
+
 	@Autowired
 	private ZipcodesService zipcodesService;
+
 	@Autowired
 	private AddressesService addressesService;
 
@@ -138,26 +136,21 @@ public class PersistenceJPAConfig
 
 	@Autowired
 	private ResourcesService resourcesService;
+
 	/** The {@link BaseAuthenticationsService}. */
 	@Autowired
 	private BaseAuthenticationsService baseAuthenticationsService;
 
 	/** The contactmethods business service. */
 	@Autowired
-	@Getter
-	@Setter
 	private ContactmethodsService contactmethodsService;
 
 	/** The roles business service. */
 	@Autowired
-	@Getter
-	@Setter
 	private RolesService rolesService;
 
 	/** The users business service. */
 	@Autowired
-	@Getter
-	@Setter
 	private UsersService usersService;
 
 	/** The users business service. */
@@ -196,22 +189,26 @@ public class PersistenceJPAConfig
 	@Autowired
 	private RecommendationsService recommendationsService;
 
-
-
-
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean()
 	{
-		final LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 
-		em.setPersistenceUnitName("bundlemanagement");
-		em.setDataSource(dataSource());
-
-		final JpaVendorAdapter vendorAdapter = SpringEntityManagerFactory.newJpaVendorAdapter(Database.H2);
-			new HibernateJpaVendorAdapter();
-		em.setJpaVendorAdapter(vendorAdapter);
-		em.setJpaProperties(additionalProperties());
-		em.afterPropertiesSet();
+		final LocalContainerEntityManagerFactoryBean em =
+			SpringEntityManagerFactory.newEntityManagerFactoryBean(
+				"bundlemanagement",
+				dataSource(),
+				SpringEntityManagerFactory.newJpaVendorAdapter(Database.H2),
+				additionalProperties());
+//			new LocalContainerEntityManagerFactoryBean();
+//
+//		em.setPersistenceUnitName("bundlemanagement");
+//		em.setDataSource(dataSource());
+//
+//		final JpaVendorAdapter vendorAdapter = SpringEntityManagerFactory.newJpaVendorAdapter(Database.H2);
+//			new HibernateJpaVendorAdapter();
+//		em.setJpaVendorAdapter(vendorAdapter);
+//		em.setJpaProperties(additionalProperties());
+//		em.afterPropertiesSet();
 		return em;
 	}
 

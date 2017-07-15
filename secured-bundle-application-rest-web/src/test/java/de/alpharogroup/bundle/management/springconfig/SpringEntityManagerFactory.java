@@ -12,8 +12,8 @@ import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-import org.springframework.transaction.PlatformTransactionManager;
 
+@Deprecated
 public class SpringEntityManagerFactory
 {
 
@@ -54,18 +54,34 @@ public class SpringEntityManagerFactory
 	}
 
 
+	/**
+	 * Factory method for create the new {@link LocalContainerEntityManagerFactoryBean} object from
+	 * the given persistence unit name as {@link String} object, the {@link DataSource} object, the
+	 * {@link JpaVendorAdapter} object and the jpa {@link Properties}.
+	 *
+	 * @param persistenceUnitName
+	 *            the persistence unit name
+	 * @param dataSource
+	 *            the data source
+	 * @param vendorAdapter
+	 *            the vendor adapter
+	 * @param jpaProperties
+	 *            the jpa properties
+	 * @return the new {@link LocalContainerEntityManagerFactoryBean} object
+	 */
 	public static LocalContainerEntityManagerFactoryBean newEntityManagerFactoryBean(
 		String persistenceUnitName, DataSource dataSource, JpaVendorAdapter vendorAdapter,
 		Properties jpaProperties)
 	{
-		final LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+		final LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
 
-		em.setPersistenceUnitName(persistenceUnitName);
-		em.setDataSource(dataSource);
+		entityManagerFactoryBean.setPersistenceUnitName(persistenceUnitName);
+		entityManagerFactoryBean.setDataSource(dataSource);
 
-		em.setJpaVendorAdapter(vendorAdapter);
-		em.setJpaProperties(jpaProperties);
-		return em;
+		entityManagerFactoryBean.setJpaVendorAdapter(vendorAdapter);
+		entityManagerFactoryBean.setJpaProperties(jpaProperties);
+		entityManagerFactoryBean.afterPropertiesSet();
+		return entityManagerFactoryBean;
 	}
 
 }
