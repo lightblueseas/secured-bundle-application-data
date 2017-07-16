@@ -90,6 +90,8 @@
 		<!-- RESOURCE-BUNDLES-DATA versions -->
 		<resource-bundles-data.version>${project.version}</resource-bundles-data.version>
 		<resource-bundles-business.version>${resource-bundles-data.version}</resource-bundles-business.version>
+		<resource-bundles-entities.version>${resource-bundles-data.version}</resource-bundles-entities.version>
+		<resource-bundles-domain.version>${resource-bundles-data.version}</resource-bundles-domain.version>
 		<resource-bundles-rest-api.version>${resource-bundles-data.version}</resource-bundles-rest-api.version>
 		<!-- USER-MANAGEMENT-DATA versions -->
 		<user-management-data.version>${project.version}</user-management-data.version>
@@ -97,6 +99,7 @@
 		<user-management-business.version>${user-management-data.version}</user-management-business.version>
 		<user-management-domain.version>${user-management-data.version}</user-management-domain.version>
 		<user-management-rest-api.version>${user-management-data.version}</user-management-rest-api.version>
+		<user-management-rest-client.version>${user-management-data.version}</user-management-rest-client.version>
 	</properties>
 
 
@@ -109,61 +112,59 @@
 				<artifactId>secured-bundle-application-rest-client</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-
 			<!-- RESOURCE-BUNDLES-DATA DEPENDENCIES -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
+				<artifactId>resource-bundles-business</artifactId>
+				<version>${resource-bundles-business.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
 				<artifactId>resource-bundles-entities</artifactId>
-				<version>${project.version}</version>
+				<version>${resource-bundles-entities.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>resource-bundles-domain</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>de.alpharogroup</groupId>
-				<artifactId>resource-bundles-business</artifactId>
-				<version>${project.version}</version>
+				<version>${resource-bundles-domain.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>resource-bundles-rest-api</artifactId>
-				<version>${project.version}</version>
+				<version>${resource-bundles-rest-api.version}</version>
 			</dependency>
-
 			<!-- USER-MANAGEMENT-DATA DEPENDENCIES -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>user-management-entities</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>de.alpharogroup</groupId>
-				<artifactId>user-management-domain</artifactId>
-				<version>${project.version}</version>
+				<version>${user-management-entities.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>user-management-business</artifactId>
-				<version>${project.version}</version>
+				<version>${user-management-business.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
+				<artifactId>user-management-domain</artifactId>
+				<version>${user-management-domain.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
 				<artifactId>user-management-rest-api</artifactId>
-				<version>${project.version}</version>
+				<version>${user-management-rest-api.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>user-management-rest-client</artifactId>
-				<version>${project.version}</version>
+				<version>${user-management-rest-client.version}</version>
 			</dependency>
 			<!-- USER-DATA DEPENDENCIES -->
 			<dependency>
@@ -235,7 +236,7 @@
 				<artifactId>resource-system-rest-api</artifactId>
 				<version>${resource-system-rest-api.version}</version>
 			</dependency>
-
+			<!-- MYSTIC-CRYPT DEPENDENCIES -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>auth-security</artifactId>

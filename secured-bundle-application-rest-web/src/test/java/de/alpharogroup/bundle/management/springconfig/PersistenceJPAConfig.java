@@ -31,8 +31,6 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -75,7 +73,6 @@ import de.alpharogroup.user.service.api.RolesService;
 import de.alpharogroup.user.service.api.UserTokensService;
 import lombok.Getter;
 import lombok.Setter;
-
 
 @Getter
 @Setter
@@ -201,7 +198,7 @@ public class PersistenceJPAConfig
 				"bundlemanagement",
 				dataSource(),
 				SpringJpaFactory.newJpaVendorAdapter(Database.H2),
-				additionalProperties());
+				jpaProperties());
 		return em;
 	}
 
@@ -240,7 +237,7 @@ public class PersistenceJPAConfig
 		return new PersistenceExceptionTranslationPostProcessor();
 	}
 
-	Properties additionalProperties()
+	Properties jpaProperties()
 	{
 		final Properties properties = new Properties();
 		properties.setProperty("hibernate.generateDdl", "true");

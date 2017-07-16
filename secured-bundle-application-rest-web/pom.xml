@@ -14,12 +14,6 @@
 	</properties>
 
 	<dependencies>
-	
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context-support</artifactId>
-		</dependency>
-
 
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
@@ -35,12 +29,17 @@
 			<groupId>de.alpharogroup</groupId>
 			<artifactId>secured-bundle-application-rest-client</artifactId>
 		</dependency>
-
+		<!-- RESOURCEBUNDLE-CORE DEPENDENCIES -->
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>resourcebundle-inspector</artifactId>
+		</dependency>
+		<!-- JAVAX SERVLET DEPENDENCIES -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 		</dependency>
-
+		<!-- SPRING DEPENDENCIES -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -50,12 +49,17 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 		</dependency>
+	
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
 		</dependency>
-
+		<!-- CXF DEPENDENCIES -->
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
@@ -99,11 +103,6 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-		</dependency>
-		<!-- RESOURCEBUNDLE-CORE DEPENDENCIES -->
-		<dependency>
-			<groupId>de.alpharogroup</groupId>
-			<artifactId>resourcebundle-inspector</artifactId>
 		</dependency>
 		<!-- JETTY 9 DEPENDENCIES FOR TESTING -->
 		<dependency>
