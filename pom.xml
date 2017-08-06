@@ -59,6 +59,7 @@
 		<module>secured-bundle-application-init</module>
 		<module>secured-bundle-application-rest-client</module>
 		<module>secured-bundle-application-rest-web</module>
+		<module>secured-bundle-application-business</module>
 	</modules>
 
 
