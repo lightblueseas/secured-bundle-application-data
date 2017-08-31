@@ -113,6 +113,12 @@
 				<artifactId>secured-bundle-application-rest-client</artifactId>
 				<version>${project.version}</version>
 			</dependency>
+			
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>secured-bundle-application-business</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 			<!-- RESOURCE-BUNDLES-DATA DEPENDENCIES -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
