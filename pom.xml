@@ -9,7 +9,7 @@
 	</parent>
 
 	<artifactId>secured-bundle-application-data</artifactId>
-	<version>3.12.2</version>
+	<version>3.14.0</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2015</inceptionYear>
 
@@ -71,19 +71,19 @@
 		<!-- NEW EXTENSIONS LIB versions -->
 		<email-tails.version>4.15.0</email-tails.version>
 		<!-- USER-DATA versions -->
-		<user-data.version>${project.version}</user-data.version>
+		<user-data.version>3.12.2</user-data.version>
 		<user-entities.version>${user-data.version}</user-entities.version>
 		<user-business.version>${user-data.version}</user-business.version>
 		<user-domain.version>${user-data.version}</user-domain.version>
 		<user-rest-api.version>${user-data.version}</user-rest-api.version>
 		<!-- ADDRESS-BOOK-DATA versions -->
-		<address-book-data.version>${project.version}</address-book-data.version>
+		<address-book-data.version>3.12.2</address-book-data.version>
 		<address-book-entities.version>${address-book-data.version}</address-book-entities.version>
 		<address-book-business.version>${address-book-data.version}</address-book-business.version>
 		<address-book-domain.version>${address-book-data.version}</address-book-domain.version>
 		<address-book-rest-api.version>${address-book-data.version}</address-book-rest-api.version>
 		<!-- RESOURCE-SYSTEM-DATA versions -->
-		<resource-system-data.version>${project.version}</resource-system-data.version>
+		<resource-system-data.version>3.12.2</resource-system-data.version>
 		<resource-system-entities.version>${resource-system-data.version}</resource-system-entities.version>
 		<resource-system-domain.version>${resource-system-data.version}</resource-system-domain.version>
 		<resource-system-business.version>${resource-system-data.version}</resource-system-business.version>
@@ -95,7 +95,7 @@
 		<resource-bundles-domain.version>${resource-bundles-data.version}</resource-bundles-domain.version>
 		<resource-bundles-rest-api.version>${resource-bundles-data.version}</resource-bundles-rest-api.version>
 		<!-- USER-MANAGEMENT-DATA versions -->
-		<user-management-data.version>${project.version}</user-management-data.version>
+		<user-management-data.version>3.12.2</user-management-data.version>
 		<user-management-entities.version>${user-management-data.version}</user-management-entities.version>
 		<user-management-business.version>${user-management-data.version}</user-management-business.version>
 		<user-management-domain.version>${user-management-data.version}</user-management-domain.version>
