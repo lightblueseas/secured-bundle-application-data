@@ -32,7 +32,7 @@ You can first define the version properties:
 	<properties>
 			...
 		<!-- secured-bundle-application-data version -->
-		<secured-bundle-application-data.version>3.12.0</secured-bundle-application-data.version>
+		<secured-bundle-application-data.version>3.14.0</secured-bundle-application-data.version>
 		<secured-bundle-application-init.version>${secured-bundle-application-data.version}</secured-bundle-application-init.version>
 		<secured-bundle-application-rest-client.version>${secured-bundle-application-data.version}</secured-bundle-application-rest-client.version>
 		<secured-bundle-application-rest-web.version>${secured-bundle-application-data.version}</secured-bundle-application-rest-web.version>
