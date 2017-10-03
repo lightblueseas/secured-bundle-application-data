@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>secured-bundle-application-data</artifactId>
-		<version>3.14.0</version>
+		<version>3.14.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>secured-bundle-application-rest-web</artifactId>
 	<packaging>war</packaging>
